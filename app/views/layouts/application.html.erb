@@ -3,13 +3,23 @@
   <head>
     <title>Instatalk</title>
     <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag "application" %>
   </head>
 
   <body>
+    <div class="container">
+      <div class="row justify-content-md-center">
+        <div class="col-md-8">
+          <div class="card text-center mt-4 mb-4">
+            <div class="card-body">
+              Welcome to Instatalk, <b><%= current_user.nickname %></b>!
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <%= yield %>
   </body>
 </html>
