@@ -1,6 +1,8 @@
 class RoomChannel < ApplicationCable::Channel
   def subscribed
-    logger.info "Subscribed to RoomChannel"
+    logger.info "Subscribed to RoomChannel, roomId: #{params[:roomId]}"
+
+    @room = Room.find(params[:roomId])
 
     stream_from 'room_channel'
   end
